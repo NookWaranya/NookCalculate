@@ -33,6 +33,9 @@ public class MainFragment extends Fragment {
         //   Calculate Controller
         calculateController();
 
+
+
+
     } // Main Method
 
     private void calculateController() {

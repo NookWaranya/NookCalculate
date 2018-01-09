@@ -19,7 +19,6 @@
     <LinearLayout
 
 
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
@@ -27,33 +26,40 @@
         android:orientation="vertical"
         android:padding="@dimen/padding">
 
-    <!--ShowText-->
-    <TextView
-        android:id="@+id/txtShowName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text=" Click Show Name"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/h1"
-        android:textStyle="bold" />
+        <!--ShowText-->
+        <TextView
+            android:id="@+id/txtShowName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text=" Click Show Name"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/h1"
+            android:textStyle="bold" />
 
-    <!--Show Name Button-->
+        <!--Show Name Button-->
 
         <Button
             android:id="@+id/btnShowName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Show Name" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Name" />
 
-    <!--Calculate Button-->
-    <Button
-        android:id="@+id/btnCalculate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculate" />
+        <!--Calculate Button-->
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate" />
 
+        <!--Clear Button   -->
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear" />
 
-</LinearLayout>
 
     </LinearLayout>
+
+</LinearLayout>
