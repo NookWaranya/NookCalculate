@@ -30,7 +30,7 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
     private String displayString = "";
     private double num1ADouble = 0, displayADouble;
     private String tag = "23JanV1";
-    private boolean addABoolean = false;
+    private boolean addABoolean = false, minusABoolean = false;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -188,7 +188,7 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
                 showDisplay("9");
                 break;
             case R.id.btn0:
-                showDisplay("0 ");
+                showDisplay("0");
                 break;
             case R.id.btnC:
 //                Clear Display
@@ -196,6 +196,9 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
                 break;
 
             case R.id.btnAdd:
+
+                addABoolean = true;
+
                 displayADouble = Double.parseDouble(displayString);
                 if (num1ADouble == 0) {
                     num1ADouble = displayADouble;
@@ -203,46 +206,70 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
                     num1ADouble = num1ADouble + displayADouble;
                 }
 
-                Log.d(tag, "num1 ==>" +num1ADouble);
+                Log.d(tag, "num1 ==>" + num1ADouble);
 
 
                 clearDisplay();
                 break;
             case R.id.btnEqual:
                 displayADouble = Double.parseDouble(displayString);
+
                 Log.d(tag, "num1ADouble==>" + num1ADouble);
-                Log.d(tag, "displayAdouble ==>" + displayADouble);
+                Log.d(tag, "displayADouble ==>" + displayADouble);
                 Log.d(tag, "addBoolean ==>" + addABoolean);
                 if (addABoolean) {
                     num1ADouble = num1ADouble + displayADouble;
                     addABoolean = false;
+                } else if (minusABoolean) {
+                    num1ADouble = num1ADouble - displayADouble;
+                    minusABoolean = false;
+
                 }
-                showDisplay(Double.toString(num1ADouble));
+
+
                 Log.d(tag, "num1ADouble after if ==>" + num1ADouble);
                 textView.setText(Double.toString(num1ADouble));
+                displayString = "0";
                 break;
             case R.id.btnMinus:
+                minusABoolean = true;
+
                 if (num1ADouble == 0) {
                     num1ADouble = Double.parseDouble(displayString);
                 } else {
                     num1ADouble = num1ADouble - Double.parseDouble(displayString);
                 }
-                Log.d(tag, "num1 at btnMinus ==>"+num1ADouble);
+                Log.d(tag, "num1 at btnMinus ==>" + num1ADouble);
                 clearDisplay();
                 break;
 
 
         }//    }//switch
-    }
+    }//onClick
 
     private void clearDisplay() {
-        displayADouble = 0;
-        textView.setText("");
-        displayString = "";
+
+        if (addABoolean) {
+
+            displayADouble = 0;
+            textView.setText("");
+            displayString = "";
+        } else if (minusABoolean) {
+
+            displayADouble = 0;
+            textView.setText("");
+            displayString = "";
+        } else {
+            displayADouble = 0;
+            textView.setText("");
+            displayString = "";
+            num1ADouble = 0;
+
+        }
+
 
     }
 
 
-
-//    }//onClick
+//    }//Main Class
 }
