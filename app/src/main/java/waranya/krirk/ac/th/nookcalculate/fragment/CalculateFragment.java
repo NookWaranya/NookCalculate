@@ -130,6 +130,7 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
         button5 = getView().findViewById(R.id.btn5);
         button6 = getView().findViewById(R.id.btn6);
         button7 = getView().findViewById(R.id.btn7);
+
         button8 = getView().findViewById(R.id.btn8);
         button9 = getView().findViewById(R.id.btn9);
         button0 = getView().findViewById(R.id.btn0);
@@ -209,9 +210,9 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
                         minusABoolean = false;
 
                     }else {
-
+                        num1ADouble = num1ADouble + displayADouble;
                     }
-                    num1ADouble = num1ADouble + displayADouble;
+
 
                 }
 
