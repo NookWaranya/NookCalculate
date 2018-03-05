@@ -140,6 +140,7 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
         buttonDivide = getView().findViewById(R.id.btnDivide);
         buttonEaual = getView().findViewById(R.id.btnEqual);
 
+
     }
 
 
